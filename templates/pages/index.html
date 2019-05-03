@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static '/css/all.css' %}">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}">
+  <!-- Custom -->
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
+
+  <!--for table-->
+  <link rel="stylesheet" href="{% static '/css/main.css' %}">
+
+  
+
+  <title>Psionic Form Validation</title>
+</head>
+
+<body>
+  
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
+    <div class="container">
+      <a class="navbar-brand" href="">
+        <img src="assets/img/clipboard_smaller.png" class="logo" alt=""> Psionic Form Validation
+        
+      </a>
+      
+      </div>
+    </div>
+  </nav>
+
+
+  <section id="register" class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              <h4>
+                <i class="fas fa-user-plus"></i> Register</h4>
+            </div>
+            <div class="card-body">
+                <form action="{% url 'index' %}" method = "POST">
+                {% csrf_token %}
+                  <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="pnumber">Phone Number</label>
+                  <input type="number" name="pnumber" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="email"> Email Address</label>
+                  <input type="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label>Address</label>
+                    <select name="address" class="form-control">
+                      <option selected="true" disabled="disabled" required>Location (All)</option>
+                      <option value="Uttara">Uttara</option>
+                      <option value="Gulshan">Gulshan</option>
+                      <option value="Banani">Banani</option>
+                      <option value="Kawran">Kawran Bazar</option>
+                      <option value="Dhanmondi">Dhanmondi</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label for="dob">Date of Birth</label>
+                  <input type="date" name="dob" class="form-control" required>
+                </div>
+                <input type="submit" value="Register" class="btn btn-secondary btn-block">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--table -->
+
+  <div class="container">
+  <div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        
+        <th scope="col">Name</th>
+        <th scope="col">Phone </th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">DOB</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% if entrydata %}
+      {% for data in entrydata %}
+        <tr>
+          <td>{{data.name}}</td>
+          <td>{{data.pnumber}}</td>
+          <td>{{data.email}}</td>
+          <td>{{data.address}}</td>
+          <td>{{data.dob}}</td>
+        </tr>
+      {% endfor %}
+    {% else %}
+      <div class="col-md-12">
+          <p>No Listings Available</p>
+        </div>
+    
+    {% endif %}
+      
+    </tbody>
+  </table>
+</div>
+</div>
+
+  <!-- Footer -->
+  <footer id="main-footer" class="py-4 bg-primary text-white text-center">
+    Copyright &copy;
+    <span class="year"></span> Psionic Form Validation
+  </footer>
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %} "></script>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
