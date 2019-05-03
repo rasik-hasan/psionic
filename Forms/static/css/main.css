@@ -1,30 +1,11 @@
-
-
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
-
-
-@font-face {
-  font-family: OpenSans-Regular;
-  src: url('../fonts/OpenSans/OpenSans-Regular.ttf'); 
-}
-
-
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
-
-
-
-
 /*//////////////////////////////////////////////////////////////////
 [ Utiliti ]*/
-
-
-
-
-
 
 /*//////////////////////////////////////////////////////////////////
 [ Table ]*/
@@ -37,7 +18,6 @@
 .container-table100 {
   width: 100%;
   min-height: 50vh;
-  
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -67,7 +47,8 @@ table {
 table * {
   position: relative;
 }
-table td, table th {
+table td,
+table th {
   padding-left: 8px;
 }
 table thead tr {
@@ -80,22 +61,25 @@ table tbody tr {
 table tbody tr:last-child {
   border: 0;
 }
-table td, table th {
+table td,
+table th {
   text-align: left;
 }
-table td.l, table th.l {
+table td.l,
+table th.l {
   text-align: right;
 }
-table td.c, table th.c {
+table td.c,
+table th.c {
   text-align: center;
 }
-table td.r, table th.r {
+table td.r,
+table th.r {
   text-align: center;
 }
 
-
-.table100-head th{
-  font-family: OpenSans-Regular;
+.table100-head th {
+  font-family: Sans-Serif;
   font-size: 18px;
   color: white;
   line-height: 1.2;
@@ -107,7 +91,7 @@ tbody tr:nth-child(even) {
 }
 
 tbody tr {
-  font-family: OpenSans-Regular;
+  font-family: Sans-Serif;
   font-size: 15px;
   color: #808080;
   line-height: 1.2;
@@ -143,7 +127,3 @@ tbody tr:hover {
   text-align: right;
   padding-right: 62px;
 }
-
-
-
-
